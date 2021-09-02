@@ -1,3 +1,3 @@
-# Java Spring Implementation of E-Commerce Microservice Application
+# Java Spring Implementation
 
 ![](../architecture.png)
