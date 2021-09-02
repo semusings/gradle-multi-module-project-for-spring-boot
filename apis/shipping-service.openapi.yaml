@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: E-Commerce Microservice Application
+  title: E-Commerce - Shipping Service
   description: |
     This API allows writing down marks on a Tic Tac Toe board
     and requesting the state of the board or of individual squares.
