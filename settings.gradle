@@ -1,0 +1,8 @@
+rootProject.name = 'microservice-architecture-patterns'
+include 'java-spring:data-centric-approach'
+findProject(':java-spring:data-centric-approach')?.name = 'java-spring-data-centric-approach'
+include 'java-spring:domain-oriented-approach'
+findProject(':java-spring:domain-oriented-approach')?.name = 'java-spring-domain-oriented-approach'
+include 'java-spring:cqrs-and-eventsourcing-approach'
+findProject(':java-spring:cqrs-and-eventsourcing-approach')?.name = 'java-spring-cqrs-and-eventsourcing-approach'
+
