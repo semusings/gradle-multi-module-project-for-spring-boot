@@ -38,4 +38,6 @@ findProject(':java-spring:domain-oriented-approach')?.name = 'domain-oriented-ap
 
 include 'java-spring:cqrs-and-eventsourcing-approach'
 findProject(':java-spring:cqrs-and-eventsourcing-approach')?.name = 'cqrs-and-eventsourcing-approach'
+include 'java-spring:data-centric-approach:api-gateway'
+findProject(':java-spring:data-centric-approach:api-gateway')?.name = 'api-gateway'
 

@@ -1,0 +1,6 @@
+plugins {
+    id 'custom.spring-boot'
+}
+
+dependencies {
+}
