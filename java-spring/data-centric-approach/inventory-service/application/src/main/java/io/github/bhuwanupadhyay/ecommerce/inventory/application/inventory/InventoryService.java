@@ -1,5 +1,6 @@
-package io.github.bhuwanupadhyay.ecommerce.inventory.application;
+package io.github.bhuwanupadhyay.ecommerce.inventory.application.inventory;
 
+import io.github.bhuwanupadhyay.ecommerce.inventory.application.core.EntityNotFound;
 import io.github.bhuwanupadhyay.ecommerce.inventory.infrastructure.InventoryRepository;
 import io.github.bhuwanupadhyay.ecommerce.inventory.infrastructure.ItemRepository;
 import io.github.bhuwanupadhyay.ecommerce.inventory.model.Inventory;
@@ -19,7 +20,7 @@ public class InventoryService {
 
     private final ItemRepository itemRepository;
 
-    public InventoryItem addItem(String inventoryId, ItemRequest request) {
+    public InventoryItem addItem(String inventoryId, InventoryItemRequest request) {
         Inventory inventory = getInventory(inventoryId);
         InventoryItem item = new InventoryItem();
         item.setItemId(UUID.randomUUID().toString());
@@ -31,7 +32,7 @@ public class InventoryService {
         return itemRepository.save(item);
     }
 
-    public InventoryItem updateItem(String inventoryId, String itemId, ItemRequest request) {
+    public InventoryItem updateItem(String inventoryId, String itemId, InventoryItemRequest request) {
         Inventory inventory = getInventory(inventoryId);
         InventoryItem item = getItem(itemId);
         item.setInventory(inventory);

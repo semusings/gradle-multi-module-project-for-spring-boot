@@ -1,4 +1,4 @@
-package io.github.bhuwanupadhyay.ecommerce.inventory.application;
+package io.github.bhuwanupadhyay.ecommerce.inventory.application.core;
 
 public class EntityNotFound extends RuntimeException {
 

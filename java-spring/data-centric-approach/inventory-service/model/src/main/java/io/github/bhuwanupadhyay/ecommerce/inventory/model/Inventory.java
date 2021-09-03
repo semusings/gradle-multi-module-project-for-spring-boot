@@ -25,7 +25,7 @@ public class Inventory implements Serializable {
 
     @OneToMany(mappedBy = "inventory", cascade = {CascadeType.REMOVE})
     @ToString.Exclude
-    private List<InventoryItem> inventoryItems;
+    private List<InventoryItem> items;
 
     @Override
     public boolean equals(Object o) {

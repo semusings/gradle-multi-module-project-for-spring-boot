@@ -1,4 +1,4 @@
-package io.github.bhuwanupadhyay.ecommerce.inventory.application;
+package io.github.bhuwanupadhyay.ecommerce.inventory.application.inventory;
 
 import io.github.bhuwanupadhyay.ecommerce.inventory.model.Inventory;
 import io.github.bhuwanupadhyay.ecommerce.inventory.model.InventoryItem;
@@ -27,15 +27,15 @@ public class InventoryController {
     }
 
     @PostMapping("{inventoryId}/items")
-    public ItemResponse addItem(@NotBlank @PathVariable("inventoryId") String inventoryId,
-                                @Valid @RequestBody ItemRequest request) {
+    public InventoryItemResponse addItem(@NotBlank @PathVariable("inventoryId") String inventoryId,
+                                         @Valid @RequestBody InventoryItemRequest request) {
         return buildItemResponse(inventoryService.addItem(inventoryId, request));
     }
 
     @PutMapping("{inventoryId}/items/{itemId}")
-    public ItemResponse updateItem(@NotBlank @PathVariable("inventoryId") String inventoryId,
-                                   @NotBlank @PathVariable("itemId") String itemId,
-                                   @Valid @RequestBody ItemRequest request) {
+    public InventoryItemResponse updateItem(@NotBlank @PathVariable("inventoryId") String inventoryId,
+                                            @NotBlank @PathVariable("itemId") String itemId,
+                                            @Valid @RequestBody InventoryItemRequest request) {
         return buildItemResponse(inventoryService.updateItem(inventoryId, itemId, request));
     }
 
@@ -57,8 +57,8 @@ public class InventoryController {
         return response;
     }
 
-    private ItemResponse buildItemResponse(InventoryItem inventoryItem) {
-        ItemResponse response = new ItemResponse();
+    private InventoryItemResponse buildItemResponse(InventoryItem inventoryItem) {
+        InventoryItemResponse response = new InventoryItemResponse();
         response.setInventoryId(inventoryItem.getInventory().getInventoryId());
         response.setItemId(inventoryItem.getItemId());
         response.setDiscount(inventoryItem.getDiscount());

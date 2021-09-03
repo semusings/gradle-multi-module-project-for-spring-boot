@@ -11,4 +11,6 @@ module microservice.architecture.patterns.java.spring.data.centric.approach.inve
     requires microservice.architecture.patterns.java.spring.data.centric.approach.inventory.service.model.main;
 
     exports io.github.bhuwanupadhyay.ecommerce.inventory.application;
+    exports io.github.bhuwanupadhyay.ecommerce.inventory.application.core;
+    exports io.github.bhuwanupadhyay.ecommerce.inventory.application.inventory;
 }
