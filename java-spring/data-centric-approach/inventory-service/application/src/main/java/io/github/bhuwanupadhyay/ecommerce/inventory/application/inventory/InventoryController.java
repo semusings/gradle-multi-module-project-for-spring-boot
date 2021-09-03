@@ -61,7 +61,7 @@ public class InventoryController {
         InventoryItemResponse response = new InventoryItemResponse();
         response.setInventoryId(inventoryItem.getInventory().getInventoryId());
         response.setItemId(inventoryItem.getItemId());
-        response.setDiscount(inventoryItem.getDiscount());
+        response.setDiscount(inventoryItem.getDiscountPercentage());
         response.setPrice(inventoryItem.getPrice());
         response.setQuantity(inventoryItem.getQuantity());
         response.setItemName(inventoryItem.getItemName());

@@ -2,7 +2,7 @@ package io.github.bhuwanupadhyay.ecommerce.inventory.application.inventory;
 
 import io.github.bhuwanupadhyay.ecommerce.inventory.application.core.EntityNotFound;
 import io.github.bhuwanupadhyay.ecommerce.inventory.infrastructure.InventoryRepository;
-import io.github.bhuwanupadhyay.ecommerce.inventory.infrastructure.ItemRepository;
+import io.github.bhuwanupadhyay.ecommerce.inventory.infrastructure.InventoryItemRepository;
 import io.github.bhuwanupadhyay.ecommerce.inventory.model.Inventory;
 import io.github.bhuwanupadhyay.ecommerce.inventory.model.InventoryItem;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class InventoryService {
 
     private final InventoryRepository inventoryRepository;
 
-    private final ItemRepository itemRepository;
+    private final InventoryItemRepository itemRepository;
 
     public InventoryItem addItem(String inventoryId, InventoryItemRequest request) {
         Inventory inventory = getInventory(inventoryId);
@@ -28,7 +28,7 @@ public class InventoryService {
         item.setItemName(request.getItemName());
         item.setPrice(request.getPrice());
         item.setQuantity(request.getQuantity());
-        item.setDiscount(request.getDiscount());
+        item.setDiscountPercentage(request.getDiscount());
         return itemRepository.save(item);
     }
 
@@ -39,7 +39,7 @@ public class InventoryService {
         item.setItemName(request.getItemName());
         item.setPrice(request.getPrice());
         item.setQuantity(request.getQuantity());
-        item.setDiscount(request.getDiscount());
+        item.setDiscountPercentage(request.getDiscount());
         return itemRepository.save(item);
     }
 

@@ -32,11 +32,11 @@ public class InventoryItem implements Serializable {
     @ToString.Exclude
     private Double price;
 
-    @Column(name = "discount")
+    @Column(name = "discount_percentage")
     @ToString.Exclude
-    private Integer discount;
+    private Integer discountPercentage;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "inventory_id", nullable = false)
     @ToString.Exclude
     private Inventory inventory;
